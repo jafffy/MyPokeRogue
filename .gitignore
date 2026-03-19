@@ -24,3 +24,6 @@ Pods/
 
 # macOS
 .DS_Store
+
+# Cloned source for analysis
+pokerogue-src/
