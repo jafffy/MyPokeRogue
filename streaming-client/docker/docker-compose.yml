@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  pokerogue-stream:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - GAME_URL=https://pokerogue.net
+      - CAPTURE_INTERVAL=100
+      - JPEG_QUALITY=60
+      - STREAM_WIDTH=480
+      - STREAM_HEIGHT=270
+    restart: unless-stopped
+    # Chromium needs these capabilities
+    cap_add:
+      - SYS_ADMIN
+    # Shared memory for Chromium
+    shm_size: "512mb"
