@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>PokéRogue Streaming Client</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Connection overlay -->
+    <div id="overlay">
+      <div class="overlay-content">
+        <h1>PokéRogue</h1>
+        <p id="status-text">Connecting...</p>
+        <div id="loading-bar"><div id="loading-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Game canvas -->
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Mobile touch controls -->
+    <div id="touch-controls">
+      <div id="dpad">
+        <button class="dpad-btn" data-dir="up">▲</button>
+        <div class="dpad-row">
+          <button class="dpad-btn" data-dir="left">◀</button>
+          <button class="dpad-btn" data-dir="right">▶</button>
+        </div>
+        <button class="dpad-btn" data-dir="down">▼</button>
+      </div>
+      <div id="action-buttons">
+        <button class="action-btn" data-key="x" id="btn-b">B</button>
+        <button class="action-btn" data-key="z" id="btn-a">A</button>
+        <button class="action-btn small" data-key="c" id="btn-menu">MENU</button>
+        <button class="action-btn small" data-key="v" id="btn-stats">STAT</button>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div id="stats-bar">
+      <span id="stat-fps">-- FPS</span>
+      <span id="stat-latency">-- ms</span>
+      <span id="stat-bandwidth">-- KB/s</span>
+    </div>
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>
